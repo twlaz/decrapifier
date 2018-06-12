@@ -140,7 +140,7 @@ Function RegSetCUOnly {
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" /T REG_SZ /V "Value" /D DENY /F
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E6AD100E-5F4E-44CD-BE0F-2265D88D14F5}" /T REG_SZ /V "Value" /D DENY /F
     #Camera
-    Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E5323777-F976-4f5b-9B55-B94699C46E44}" /T REG_SZ /V "Value" /D DENY /F
+    #Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E5323777-F976-4f5b-9B55-B94699C46E44}" /T REG_SZ /V "Value" /D DENY /F
     #Calendar
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E471E6121A3}" /T REG_SZ /V "Value" /D DENY /F
     #Contacts
@@ -148,13 +148,13 @@ Function RegSetCUOnly {
     #Notifications
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{52079E78-A92B-413F-B213-E8FE35712E72}" /T REG_SZ /V "Value" /D DENY /F
     #Microphone
-    Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{2EEF81BE-33FA-4800-9670-1CD474972C3F}" /T REG_SZ /V "Value" /D DENY /F
+    #Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{2EEF81BE-33FA-4800-9670-1CD474972C3F}" /T REG_SZ /V "Value" /D DENY /F
     #Account Info
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{C1D23ACC-752B-43E5-8448-8D0E519CD6D6}" /T REG_SZ /V "Value" /D DENY /F
     #Call history
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2B3B41D7AB}" /T REG_SZ /V "Value" /D DENY /F
     #Email, may break the Mail app?
-    Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA7BFCC04C5}" /T REG_SZ /V "Value" /D DENY /F
+    #Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA7BFCC04C5}" /T REG_SZ /V "Value" /D DENY /F
     #TXT/MMS
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-3003349C1548}" /T REG_SZ /V "Value" /D DENY /F
     Reg Add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{21157C1F-2651-4CC1-90CA-1F28B02263F6}" /T REG_SZ /V "Value" /D DENY /F
@@ -242,13 +242,13 @@ Function RegSetMachine {
     #Messaging			
     Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessMessaging" /D 2 /F
     #Microphone			
-    Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessMicrophone" /D 2 /F
+    #Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessMicrophone" /D 2 /F
     #Motion			
     Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessMotion" /D 2 /F
     #Notifications			
     Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessNotifications" /D 2 /F
     #Make Phone Calls			
-    Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessPhone" /D 2 /F
+    #Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessPhone" /D 2 /F
     #Radios			
     Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /T REG_DWORD /V "LetAppsAccessRadios" /D 2 /F
     #Access trusted devices			
@@ -262,7 +262,7 @@ Function RegSetMachine {
     #Turn off inventory collector			
     Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat" /T REG_DWORD /V "DisableInventory" /D 1 /F
     #Turn off steps recorder
-    Reg Add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat" /T REG_DWORD /V "DisableUAR" /D 1 /F
+    #Reg Add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat" /T REG_DWORD /V "DisableUAR" /D 1 /F
 
     #/Cloud Content			
     #Do not show Windows Tips			
@@ -324,7 +324,7 @@ Function RegSetMachine {
     #Do not sync (anything)			
     Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\SettingSync" /T REG_DWORD /V "DisableSettingSync" /D 2 /F
     #Disallow users to override this
-    Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\SettingSync" /T REG_DWORD /V "DisableSettingSyncUserOverride" /D 1 /F
+    #Reg Add	"HKLM\SOFTWARE\Policies\Microsoft\Windows\SettingSync" /T REG_DWORD /V "DisableSettingSyncUserOverride" /D 1 /F
 
     #/Windows Update			
     #Turn off featured software notifications through WU (basically ads)			
@@ -394,9 +394,15 @@ Function ClearStartMenu {
     <StartLayoutCollection>
       <defaultlayout:StartLayout GroupCellWidth="6" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout">
         <start:Group Name="" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout">
-          <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\File Explorer.lnk" />
-          <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Accessories\Snipping Tool.lnk" />
-		  <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\Control Panel.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\File Explorer.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="2" Row="4" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\Command Prompt.lnk" />
+            <start:Tile Size="2x2" Column="4" Row="0" AppUserModelID="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+            <start:DesktopApplicationTile Size="2x2" Column="2" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Accessories\Paint.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="0" Row="4" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\Run.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="4" Row="4" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\Control Panel.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Accessories\Notepad.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Accessories\Snipping Tool.lnk" />
+            <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\computer.lnk" />
         </start:Group>
       </defaultlayout:StartLayout>
     </StartLayoutCollection>
